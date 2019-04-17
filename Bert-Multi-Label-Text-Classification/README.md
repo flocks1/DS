@@ -45,7 +45,8 @@ At the root of the project, you will see:
 - pytorch_pretrained_bert (load bert model)
 
 ## Dependencies(Reccommended)
--
+
+- Apex (https://github.com/NVIDIA/apex) [Much faster runtime can be achieved with this when using CUDA]
 
 
 
