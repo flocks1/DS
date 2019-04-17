@@ -43,6 +43,7 @@ At the root of the project, you will see:
 - matplotlib
 - pandas
 - pytorch_pretrained_bert (load bert model)
+- tensorflow (Needed to run the Tensorflow -> Pytorch model conversion script)
 
 ## Dependencies(Reccommended)
 
