@@ -1,4 +1,4 @@
-# Bert multi-label text classification by PyTorch
+# Bert multi-label text classification by PyTorch (Multi-Label Binary Classification)
 
 This repo contains a PyTorch implementation of a pretrained BERT model  for multi-label text classification.
 
