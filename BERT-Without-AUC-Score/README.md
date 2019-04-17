@@ -56,18 +56,18 @@ At the root of the project, you will see:
 you need download pretrained bert model (`uncased_L-12_H-768_A-12`)
 
 
-1. Download the Bert pretrained model from [Google](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) and place it into the `/pybert/model/pretrain` directory.
+1. Download the Bert pretrained model from [Google](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip). Unzip and then place the entire "uncased_L-12_H-768_A-12" folder into the `/pybert/model/pretrain` directory.
 
 
 2. `pip install pytorch-pretrained-bert` from [github](https://github.com/huggingface/pytorch-pretrained-BERT).
 
 
-3. Run `python convert_tf_checkpoint_to_pytorch.py` to transfer the pretrained model(tensorflow version)  into a pytorch binary.
+3. From the Root Directory, run `python convert_tf_checkpoint_to_pytorch.py` to transfer the pretrained model(tensorflow        version)  into a pytorch binary.
    This will run successfully as long as the bert model is placed into the `/pybert/model/pretrain` directory.
 
-4. Prepare [kaggle data](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data), you can modify the `io.data_transformer.py` to adapt your data.
+4. Place data inside `/pybert/dataset/raw`, directory. You can you can modify the `io.data_transformer.py` to adapt your data.
 
-5. Modify configuration information in `pybert/config/basic_config.py`(the path of data,...).
+5. Modify configuration information in `pybert/config/basic_config.py`(the path of data,hyperparameters, etc...) NOTE: Reducing batch size and sequence length may be required to run on machines without newer GPUs.
 
 6. Run `python train_bert_multi_label.py` to fine tuning bert model.
 
