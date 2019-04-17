@@ -88,9 +88,9 @@ class Trainer(object):
             if self.epoch_metrics:
                 for metric in self.epoch_metrics:
                     metric(logits=self.outputs, target=self.targets)
-                    value = metric.value()
-                    if value:
-                        self.result[f'valid_{metric.name()}'] = value
+                    # value = metric.value()
+                    # if value:
+                    #     self.result[f'valid_{metric.name()}'] = value
             if len(self.n_gpu) > 0:
                 torch.cuda.empty_cache()
             return self.result
@@ -148,9 +148,9 @@ class Trainer(object):
         if self.epoch_metrics:
             for metric in self.epoch_metrics:
                 metric(logits=self.outputs, target=self.targets)
-                value = metric.value()
-                if value:
-                    self.result[f'{metric.name()}'] = value
+                # value = metric.value()
+                # if value:
+                #     self.result[f'{metric.name()}'] = value
         if len(self.n_gpu) > 0:
             torch.cuda.empty_cache()
         return self.result

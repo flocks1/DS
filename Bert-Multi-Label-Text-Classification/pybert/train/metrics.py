@@ -73,7 +73,7 @@ class AccuracyThresh(Metric):
         >>>         metric(logits,target)
         >>>         print(metric.name(),metric.value())
     '''
-    def __init__(self,thresh = 0.5):
+    def __init__(self,thresh = 0.25):
         super(AccuracyThresh,self).__init__()
         self.thresh = thresh
         self.reset()
@@ -178,7 +178,7 @@ class F1Score(Metric):
         >>>         metric(logits,target)
         >>>         print(metric.name(),metric.value())
     '''
-    def __init__(self,thresh = 0.5, normalizate = True,task_type = 'binary',average = 'binary',search_thresh = False):
+    def __init__(self,thresh = 0.5, normalizate = True,task_type = 'multiclass',average = 'binary',search_thresh = True):
         super(F1Score).__init__()
         assert task_type in ['binary','multiclass']
         assert average in ['binary','micro', 'macro', 'samples', 'weighted']
@@ -291,13 +291,13 @@ class MultiLabelReport(Metric):
         self.y_prob = logits.sigmoid().data.cpu().detach().numpy()
         self.y_true = target.cpu().numpy()
 
-    def value(self):
-        '''
-        计算指标得分
-        '''
-        for i, label in self.id2label.items():
-            auc = roc_auc_score(y_score=self.y_prob[:, i], y_true=self.y_true[:, i])
-            print(f"label:{label} - auc: {auc:.4f}")
+    # def value(self):
+    #     '''
+    #     计算指标得分
+    #     '''
+    #     for i, label in self.id2label.items():
+    #         auc = roc_auc_score(y_score=self.y_prob[:, i], y_true=self.y_true[:, i])
+    #         print(f"label:{label} - auc: {auc:.4f}")
 
     def name(self):
         return "multilabel_report"
