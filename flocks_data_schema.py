@@ -35,7 +35,7 @@
         most_recent_time: <timestamp>, # Not displayed? 
         sentiment_tables:# Icons displayed as ordered list above the stats grid. Click on emoji to see its agg stats. list of emoji id's. 
         {  
-            angry: 1, # Binary, zero or one. Indicates whether sentiment was present or not in that tweet. 
+             # Binary, zero or one. Indicates whether sentiment was present or not in that tweet. 
             sentiment_0:{
                 type: "angry",
                 detected: True, # Flag whether to show the stat or not. 
