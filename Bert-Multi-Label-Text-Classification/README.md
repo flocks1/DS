@@ -72,7 +72,7 @@ you need download pretrained bert model (`uncased_L-12_H-768_A-12`)
 
 7. Run `python inference.py` to predict new data.
 
-```
+
 
 
 
