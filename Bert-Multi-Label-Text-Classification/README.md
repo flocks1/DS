@@ -1,6 +1,5 @@
-# Bert multi-label text classification by PyTorch
-
-This repo contains a PyTorch implementation of a pretrained BERT model  for multi-label text classification.
+# BERT: TensorFlow -> Pytorch converter, trainer and predictor.
+   This project uses a pytorch implementation of BERT multi-label training / prediction.
 
 
 ## Structure of the code
@@ -56,7 +55,7 @@ At the root of the project, you will see:
 you need download pretrained bert model (`uncased_L-12_H-768_A-12`)
 
 
-1. Download the Bert pretrained model from [Google](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) and place it into the `/pybert/model/pretrain` directory.
+1. Download the Bert pretrained model from [Google](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip). Unzip the folder and insert the entire `uncased_L-12_H-768_A-12` into the `/pybert/model/pretrain` directory.
 
 
 2. `pip install pytorch-pretrained-bert` from [github](https://github.com/huggingface/pytorch-pretrained-BERT).
@@ -73,15 +72,6 @@ you need download pretrained bert model (`uncased_L-12_H-768_A-12`)
 
 7. Run `python inference.py` to predict new data.
 
-## Fine-tuning result
-
-### training 
-
-```text
-[training] 8511/8511 [>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] -0.8s/step- loss: 0.0640
-training result:
-[2019-01-14 04:01:05]: bert-multi-label trainer.py[line:176] INFO  
-Epoch: 2 - loss: 0.0338 - val_loss: 0.0373 - val_auc: 0.9922
 ```
 
 
